@@ -34,7 +34,7 @@ Please note that the MNIST dataset is used twice in this repository.
 
 To use the evolutionary strategies for continuous learning framework, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/your-username/your-repository.git`
+1. Clone this repository: `git clone [https://github.com/your-username/your-repository.git](https://github.com/ata-bruna/thesis_es_continuous_learning)`
 2. Install the required dependencies: `pip install -r requirements.txt`
 3. Explore the code examples in the repository to get started.
 
