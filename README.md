@@ -1,7 +1,7 @@
 # Evolutionary Strategies for Continuous Learning
 
 This repository contains the algorithms developed and presented in the Master thesis entitled 
-**Evolving Deep Neural Networks for Continuous Learning: Addressing Challenges and Adapting to Changing Data Conditions without Catastrophic Forgetting**. The thesis was completed as a requirement for the APPMAS course at the University of Stavanger.
+**Evolving Deep Neural Networks for Continuous Learning: Addressing Challenges and Adapting to Changing Data Conditions without Catastrophic Forgetting**. The thesis was completed as a requirement for the APPMAS course at the University of Stavanger, Spring semester 2023.
 
 The thesis explores and implements evolutionary strategies for continuous learning, a cutting-edge approach that enables adaptive and lifelong learning in dynamic environments. 
 
@@ -10,7 +10,6 @@ The thesis explores and implements evolutionary strategies for continuous learni
 - [Overview](#overview)
 - [Installation](#installation)
 - [Data](#data)
-- [Usage](#usage)
 - [Project structure](#project-structure)
 - [How to navigate the repository](#how-to-navigate-the-repository)
 - [Acknowledgements](#acknowledgements)
@@ -34,7 +33,7 @@ Please note that the MNIST dataset is used twice in this repository.
 
 To use the evolutionary strategies for continuous learning framework, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/ata-bruna/thesis_es_continuous_learning.git`
+1. Clone this repository: `git clone https://github.com/ata-bruna/thesis_es_continuous_learning`
 2. Install the required dependencies: `pip install -r requirements.txt`
 3. Explore the code examples in the repository to get started.
 
@@ -83,7 +82,7 @@ Each `.py` can be run independently. Change `STRATIFY` and `HIDE` variables to `
 
 ## Acknowledgements
 
-We would like to express our gratitude to the open-source community for their valuable contributions and to the authors of the referenced papers and datasets that have enabled advancements in the field of continuous learning through evolutionary strategies.
+We would like to express our gratitude to the University of Stavanger and to Antorweep Chakravorty and Bikash Agrawal for their valuable contributions and guidance, and to the authors of the referenced papers and datasets that have enabled advancements in the field of continuous learning through evolutionary strategies.
 
 ---
 
