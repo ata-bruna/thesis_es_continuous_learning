@@ -1,3 +1,10 @@
+# University of Stavanger
+# Authors: Bruna Atamanczuk and Kurt Arve Skipenes Karadas
+# 
+# Code for Evolving Deep Neural Networks for Continuous Learning
+# Delivered as part of master thesis in Applied Data Science
+# June 2023
+
 import itertools
 import matplotlib.pyplot as plt
 import numpy as np
@@ -38,6 +45,7 @@ filepath = f'confusion_matrix/{DATASET}'
 # -------------------------------------------
 # Load data
 # -------------------------------------------
+print('\n\nSplit complete!')
 mnist = tf.keras.datasets.mnist
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 classes = np.unique(y_train)
@@ -90,6 +98,7 @@ model_mlp.add(Activation('relu'))
 model_mlp.add(Dense(10))
 model_mlp.add(Activation('softmax'))
 
+print(mod_title)
 model_mlp.summary()
 
 
@@ -105,6 +114,7 @@ es_callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3)
 # -------------------------------------------
 # Baseline model
 # -------------------------------------------
+print('Training baseline model')
 m_base = clone_a_model(model_mlp)
 m_base.compile(loss='categorical_crossentropy', 
                optimizer='adam', 
@@ -121,6 +131,7 @@ m_base.fit(X_train, y_train,
 # -------------------------------------------
 # Evaluate baseline model
 # -------------------------------------------
+print('Evaluating baseline model')
 loss, accuracy = m_base.evaluate(X_test, y_test)
 print('Test loss baseline:', loss)
 print('Test accuracy baseline:', accuracy)
@@ -136,7 +147,8 @@ row_txt2 = create_row(DATASET, MODEL, STRATIFY, HIDE,
 with open('results/results.csv', 'a') as f:
     for txt in (row_txt1,row_txt2):
         f.write("%s\n" %str(txt))
-
+print('Results saved in "results/results.csv"')
+print('\n\n')
 
 # -------------------------------------------
 # Get confusion matrix for baseline
@@ -170,10 +182,11 @@ history = m0.fit(X_largeT, y_largeT,
 # -------------------------------------------
 # Evaluate m0
 # -------------------------------------------
+print('Evaluating M0')
 loss, accuracy = m0.evaluate(X_test, y_test)
 print('Test loss m0:', loss)
 print('Test accuracy m0:', accuracy)
-
+print('\n\n')
 
 # -------------------------------------------
 # Write results to file
@@ -185,7 +198,8 @@ row_txt2 = create_row(DATASET, MODEL, STRATIFY, HIDE,
 with open('results/results.csv', 'a') as f:
     for txt in (row_txt1,row_txt2):
         f.write("%s\n" %str(txt))
-
+print('Results saved in "results/results.csv"')
+print('\n\n')
 
 # -------------------------------------------
 # Get confusion matrix
@@ -208,6 +222,7 @@ report_m0 = get_confusion_matrix(m0,
 # -------------------------------------------
 # Evolutionary strategy
 # -------------------------------------------
+print('Starting Evolutionary Strategies')
 results = evaluate_evolutionary_strategy(m0, MUTATIONS, 
                                          X_smallT, y_smallT, X_test, y_test)
 
@@ -222,7 +237,8 @@ for key, val in results.items():
                                  f'mes{key}', k, round(v, 4))
             with open('results/results.csv', 'a') as f:
                 f.write("%s\n" %str(row_txt))
-
+print('\n\nResults saved in "results/results.csv"')
+print('\n\n')
 
 # -------------------------------------------
 # Plot confusion matrix for ES
