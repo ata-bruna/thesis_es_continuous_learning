@@ -1,3 +1,10 @@
+# University of Stavanger
+# Authors: Bruna Atamanczuk and Kurt Arve Skipenes Karadas
+# 
+# Code for Evolving Deep Neural Networks for Continuous Learning
+# Delivered as part of master thesis in Applied Data Science
+# June 2023
+
 import itertools
 import matplotlib.pyplot as plt
 import numpy as np

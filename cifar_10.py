@@ -1,3 +1,10 @@
+# University of Stavanger
+# Authors: Bruna Atamanczuk and Kurt Arve Skipenes Karadas
+# 
+# Code for Evolving Deep Neural Networks for Continuous Learning
+# Delivered as part of master thesis in Applied Data Science
+# June 2023
+
 import itertools
 import matplotlib.pyplot as plt
 import numpy as np
@@ -53,6 +60,7 @@ X_test = X_test / 255
 # -------------------------------------------
 # Split data
 # -------------------------------------------
+print('\n\nSplit complete!')
 (X_largeT, y_largeT), (X_smallT, y_smallT), class_no = remove_class(
     X_train, 
     y_train, 
@@ -106,6 +114,7 @@ model_cnn.add(Dropout(0.5))
 # Output layer with softmax activation function
 model_cnn.add(Dense(10, activation='softmax'))
 
+print(mod_title)
 model_cnn.summary()
 
 # -------------------------------------------
@@ -118,6 +127,7 @@ es_callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3)
 # -------------------------------------------
 # Baseline model
 # -------------------------------------------
+print('\n\nTraining baseline model')
 m_base = clone_a_model(model_cnn)
 m_base.compile(loss='categorical_crossentropy', 
                optimizer='adam', 
@@ -134,6 +144,7 @@ m_base.fit(X_train, y_train,
 # -------------------------------------------
 # Evaluate baseline model
 # -------------------------------------------
+print('\n\nEvaluating baseline model')
 loss, accuracy = m_base.evaluate(X_test, y_test)
 print('Test loss baseline:', loss)
 print('Test accuracy baseline:', accuracy)
@@ -149,7 +160,8 @@ row_txt2 = create_row(DATASET, MODEL, STRATIFY, HIDE,
 with open('results/results.csv', 'a') as f:
     for txt in (row_txt1,row_txt2):
         f.write("%s\n" %str(txt))
-
+print('Results saved in "results/results.csv"')
+print('\n\n')
 
 # -------------------------------------------
 # Get confusion matrix for baseline
@@ -167,6 +179,7 @@ report_m = get_confusion_matrix(m_base,
 # -------------------------------------------
 # Creating and training model m0 (the first stream of data)
 # -------------------------------------------
+print('\n\nTraining model M0 (the first model of the stream of data)')
 m0 = clone_a_model(model_cnn)
 m0.compile(loss='categorical_crossentropy', 
            optimizer='adam', 
@@ -183,10 +196,11 @@ history = m0.fit(X_largeT, y_largeT,
 # -------------------------------------------
 # Evaluate m0
 # -------------------------------------------
+print('\n\nEvaluating M0')
 loss, accuracy = m0.evaluate(X_test, y_test)
 print('Test loss m0:', loss)
 print('Test accuracy m0:', accuracy)
-
+print('\n\n')
 
 # -------------------------------------------
 # Write results to file
@@ -198,7 +212,8 @@ row_txt2 = create_row(DATASET, MODEL, STRATIFY, HIDE,
 with open('results/results.csv', 'a') as f:
     for txt in (row_txt1,row_txt2):
         f.write("%s\n" %str(txt))
-
+print('\n\nResults saved in "results/results.csv"')
+print('\n\n')
 
 # -------------------------------------------
 # Get confusion matrix
@@ -235,7 +250,8 @@ for key, val in results.items():
                                  f'mes{key}', k, round(v, 4))
             with open('results/results.csv', 'a') as f:
                 f.write("%s\n" %str(row_txt))
-
+print('\n\nResults saved in "results/results.csv"')
+print('\n\n')
 
 # -------------------------------------------
 # Plot confusion matrix for ES

@@ -71,7 +71,7 @@ Please note that the folders marked with `*` need to be created in order to save
 
 ## How to navigate the repository
 
-Each `.py` can be run independently. Change `STRATIFY` and `HIDE` variables to `True` or `False` in line 26 and 27 of each the `.py` files to apply the evolutionary strategies for different data splits while optionally removing one class.
+Each `.py` can be run independently. Change `STRATIFY` and `HIDE` variables to `True` or `False` in line 33 and 34 of each the `.py` files to apply the evolutionary strategies for different data splits while optionally removing one class.
 
 
 -  `helper_functions.py` contains helper functions used to perform evolutionary strategies or to convert the data into a specific format used by the models.
