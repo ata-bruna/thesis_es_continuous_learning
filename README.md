@@ -21,17 +21,17 @@ Continuous learning is crucial in domains where data distributions change over t
 
 
 ## Data
-This approach was evaluates using 3 different benchmark datasets.
+This approach was evaluated using 3 different benchmark datasets.
 
 - MNIST is a widely-used dataset in the field of machine learning and computer vision. It consists of a collection of 70,000 grayscale images of handwritten digits, each with a size of 28x28 pixels.This dataset can be obtained via TensorFlow's `tf.keras.datasets.mnist.load_data()` command.
 - Fashion-MNIST provides a training set of 60,000 images and a separate test set of 10,000 images. This dataset can be obtained from the official repository maintained by Zalando Research or can be accessed by via TensorFlow's `tf.keras.datasets.fashion_mnist.load_data()` command.
-- CIFAR-10 is benchmark dataset that consists of 60,000 color images, each with a size of 32x32 pixels, categorized into 10 different classes. It can be accessed via TensorFlow's `tf.keras.datasets.cifar10.load_data()` command.
+- CIFAR-10 is a benchmark dataset that consists of 60,000 colour images, each with a size of 32x32 pixels, categorized into 10 different classes. It can be accessed via TensorFlow's `tf.keras.datasets.cifar10.load_data()` command.
 
 Please note that the MNIST dataset is used twice in this repository. 
 
 ## Installation
 
-To use the evolutionary strategies for continuous learning framework, follow these steps:
+To use the evolutionary strategies for a continuous learning framework, follow these steps:
 
 1. Clone this repository: `git clone https://github.com/ata-bruna/thesis_es_continuous_learning`
 2. Install the required dependencies: `pip install -r requirements.txt`
@@ -68,19 +68,20 @@ The project is organized as follows:
  ┗ 📜requirements.txt
 ```
 
-Please note that the folders marked with `*` need to be created in order to save the pictures necessary to evaluate the models'performance.
+Please note that the folders marked with `*` need to be created in order to save the pictures necessary to evaluate the models performance.
 
 ## How to navigate the repository
 
-Each `.py` can be run independently. Change `STRATIFY` and `HIDE` variables to `True` or `False` in line 34 and 35 of each the `.py` files to apply the evolutionary strategies for different data splits while optionally removing one class.
+Each `.py` can be run independently. Change `STRATIFY` and `HIDE` variables to `True` or `False` in line 34 and 35 in each of the `.py` files to apply the evolutionary strategies for different data splits while optionally removing one class.
 
 
 -  `helper_functions.py` contains helper functions used to perform evolutionary strategies or to convert the data into a specific format used by the models.
--  `models.py` contains the neural network architectures used in each of scenarios.
+-  `models.py` contains the neural network architectures used in each of the scenarios.
 -  `CIFAR-10.py` contains the approach applied to the CIFAR-10 dataset.
 -  `fashion_mnist.py` contains the approach applied to the Fashion-MNIST dataset.
 -  `mnist_cnn.py` contains the approach applied to the MNIST-CNN dataset.
--  `mnist.py`contains the approach applied to the MNIST dataset.
+-  `mnist.py` contains the approach applied to the MNIST dataset.
+-  `plotting_results.ipynb` contains the functions used to plot the results obtained by the models.
 
 ## Acknowledgements
 
@@ -88,6 +89,6 @@ We would like to express our gratitude to the University of Stavanger and to Ant
 
 ---
 
-We hope you find the Evolutionary Strategies for Continuous Learning repository valuable in your research and development endeavors. If you have any questions or suggestions, please feel free to reach out to us.
+We hope you find the Evolutionary Strategies for Continuous Learning repository valuable in your research and development endeavours. If you have any questions or suggestions, please feel free to reach out to us.
 
 Happy continuous learning!
