@@ -62,6 +62,7 @@ The project is organized as follows:
  ┣ 📜helper_functions.py
  ┣ 📜mnist_cnn.py 
  ┣ 📜mnist.py
+ ┣ 📜models.py
  ┣ 📜plotting_results.ipynb
  ┣ 📜README.md
  ┗ 📜requirements.txt
@@ -71,10 +72,11 @@ Please note that the folders marked with `*` need to be created in order to save
 
 ## How to navigate the repository
 
-Each `.py` can be run independently. Change `STRATIFY` and `HIDE` variables to `True` or `False` in line 33 and 34 of each the `.py` files to apply the evolutionary strategies for different data splits while optionally removing one class.
+Each `.py` can be run independently. Change `STRATIFY` and `HIDE` variables to `True` or `False` in line 34 and 35 of each the `.py` files to apply the evolutionary strategies for different data splits while optionally removing one class.
 
 
 -  `helper_functions.py` contains helper functions used to perform evolutionary strategies or to convert the data into a specific format used by the models.
+-  `models.py` contains the neural network architectures used in each of scenarios.
 -  `CIFAR-10.py` contains the approach applied to the CIFAR-10 dataset.
 -  `fashion_mnist.py` contains the approach applied to the Fashion-MNIST dataset.
 -  `mnist_cnn.py` contains the approach applied to the MNIST-CNN dataset.
